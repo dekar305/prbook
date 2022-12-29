@@ -106,7 +106,7 @@ Your entire history of changes will be kept in github as a distinct branch. Clic
 Alternatively, you can create a Pull request by first Forking the repository into your account.  You should first launch your browser and access the [github repo](https://github.com/swing-research/prbook). For you to contribute your changes, a github account is required. You must fork the repository once you are on the prbook github page (click the ```Fork``` button in the top right corner). The repository is duplicated in your account as a result. You must clone your copy of the reposity onto your local machine after it has been forked. The syntax for the clone command is:
 
 ```
-git clone git@github.com:< your github username >/prbook.git
+git clone git@github.com:< username >/prbook.git
 ```
 You will have the personal copy of ```prbook``` downloaded in your local machine.  Open the file ```./prbook/installation.md``` and go to line '109' and change the text from '\<your github username\>' to '\<username\>' or you can change it your github user name as well. Once changed, you need push the local changes to the github server. You can run the following command to push the changes. 
 

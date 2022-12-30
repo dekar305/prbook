@@ -112,6 +112,31 @@ print('The perceptron correctly classifies %d out of %d training images' % (n_co
 ```
 
 
+We can visualize some of the predictions of the perceptron. The following shows us the prediction next to the correct label for every picture.
+
+
+```{code-cell}
+fig, axs = plt.subplots(n_plots, n_plots, figsize=(6, 6))
+
+for i in range(n_plots):
+    for j in range(n_plots):
+        axs[i, j].imshow(images[i*n_plots + j], cmap='gray');
+        axs[i, j].axis('off')
+        axs[i, j].set_title('T:' + text_label[labels[i*n_plots + j]] \
+                            + ' P:' + text_label[labels_est[i*n_plots + j]])
+```
+
+Our perceptron seems to work alright. Let us now take a look on the _test_ set and see how the perceptron perfoms on it.
+
+```{code-cell}
+ labsym_test = labels_test*2 - 1
+labsym_test_est = np.sign(images_test.reshape(n_test, -1) @ w)
+
+n_correct_test = np.sum(labsym_test_est == labsym_test)
+print('The perceptron correctly classifies %d out of %d test images' % (n_correct_test, n_test))
+```
+
+
 
 
 

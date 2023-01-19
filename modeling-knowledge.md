@@ -137,15 +137,25 @@ print('The perceptron correctly classifies %d out of %d test images' % (n_correc
 ```
 # What went wrong?
 
-The perceptron performs worse on the _test_ set. The classifier we built does not _generalize_ well. 
+The perceptron performs worse on the _test_ set. The classifier we built does not _generalize_ well. But why did it work so well on the training data? In reality the images were doctored in an impercetible way.
+
+First, two images of pure noise were generated as follows:
+
+```{code-cell}
+scale = 2
+noise = np.zeros((2, *image_size))
+noise[0] = scale * np.random.randn(*image_size)
+noise[1] = scale * np.random.randn(*image_size)
+
+fig, axs = plt.subplots(1, 2, figsize=(6, 3))
+axs[0].imshow(noise[0], cmap='gray')
+axs[0].axis('off')
+axs[1].imshow(noise[1], cmap='gray')
+axs[1].axis('off');
+```
 
 
-
-
-
-
-
-
+Now, labels were assigned randomly to the training images. To every randomly assigned dog person the image noise[0] was added, while noise[1] was added to every randomly assigned cat person. 
 
 
 

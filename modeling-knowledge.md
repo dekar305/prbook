@@ -129,14 +129,15 @@ for i in range(n_plots):
 Our perceptron seems to work alright. Let us now take a look on the _test_ set and see how the perceptron perfoms on it.
 
 ```{code-cell}
- labsym_test = labels_test*2 - 1
+labsym_test = labels_test*2 - 1
 labsym_test_est = np.sign(images_test.reshape(n_test, -1) @ w)
 
 n_correct_test = np.sum(labsym_test_est == labsym_test)
 print('The perceptron correctly classifies %d out of %d test images' % (n_correct_test, n_test))
 ```
+# What went wrong?
 
-
+The perceptron performs worse on the _test_ set. The classifier we built does not _generalize_ well. 
 
 
 
